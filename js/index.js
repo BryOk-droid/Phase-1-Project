@@ -137,3 +137,15 @@ function getRandomName() {
   ];
   return names[Math.floor(Math.random() * names.length)];
 }
+
+function getRandomAge() {
+  const ages = [
+    "6 months",
+    "1 year",
+    "2 years",
+    "3 years",
+    "4 months",
+    "5 years",
+  ];
+  return ages[Math.floor(Math.random() * ages.length)];
+}
