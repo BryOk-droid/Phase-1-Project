@@ -90,3 +90,10 @@ function confirmAdopt(id) {
   confirmModal.classList.remove("hidden");
 }
 
+confirmYes.addEventListener("click", () => {
+  dogList = dogList.filter((d) => d.id !== dogToAdopt);
+  dogToAdopt = null;
+  confirmModal.classList.add("hidden");
+  updateLocalStorage();
+  renderDogs(dogList);
+});
