@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <title>Adopt-a-Dog Finder</title>
+   <link rel="stylesheet" href="./css/styles.css" />
+ </head>
+ <body>
+   <header>
+     <h1>Adopt-a-Dog Finder</h1>
+     <button id="load-dogs">Dogs to be Adopted</button>
+   </header>
+
+
+   <main>
+     <section id="pet-list" class="pet-list"></section>
+   </main>
+
+
+   <!--Add Dog Form -->
+   <section class="add-dog-section">
+     <h2>📋 Add Your Dog for Adoption</h2>
+     <form id="add-dog-form">
+       <input type="text" id="dog-name" placeholder="Dog name" required />
+       <input
+         type="text"
+         id="dog-age"
+         placeholder="Age (e.g., 2 years)"
+         required
+       />
+       <input type="url" id="dog-image" placeholder="Image URL" required />
+       <button type="submit">Add Dog</button>
+     </form>
+   </section>
+
+
+   <footer>
+     <h2>❤️ Liked Dogs</h2>
+     <ul id="liked-pets" class="liked-pets"></ul>
+   </footer>
+
+
+   <!-- Confirm Adopt Modal -->
+   <div id="confirm-modal" class="modal hidden">
+     <div class="modal-content">
+       <p id="confirm-text"></p>
+       <button id="confirm-yes">Yes</button>
+       <button id="confirm-no">No</button>
+     </div>
+   </div>
+
+
+   <script src="./js/index.js"></script>
+ </body>
+</html>
