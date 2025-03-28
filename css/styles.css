@@ -1,0 +1,209 @@
+body {
+ font-family: sans-serif;
+ background-color: #fefefe;
+ margin: 0;
+ padding: 0;
+ color: #333;
+}
+
+
+header {
+ background-color: #f8dada;
+ text-align: center;
+ padding: 1.5rem;
+}
+
+
+header h1 {
+ margin-bottom: 1rem;
+}
+
+
+#load-dogs {
+ padding: 0.7rem 1.5rem;
+ font-size: 1rem;
+ background-color: #e28585;
+ border: none;
+ border-radius: 15px;
+ color: white;
+ cursor: pointer;
+}
+
+
+#load-dogs:hover {
+ background-color: #d46a6a;
+}
+
+
+.pet-list {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ padding: 2rem;
+ gap: 1.5rem;
+}
+
+
+.pet-card {
+ border: 1px solid #ccc;
+ border-radius: 12px;
+ padding: 1rem;
+ width: 250px;
+ background-color: #fff5f5;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ text-align: center;
+ transition: transform 0.2s;
+}
+
+
+.pet-card:hover {
+ transform: scale(1.02);
+}
+
+
+.pet-card img {
+ width: 100%;
+ height: 180px;
+ object-fit: cover;
+ border-radius: 10px;
+ cursor: pointer;
+}
+
+
+.pet-card button {
+ margin: 0.5rem 0.3rem;
+ padding: 0.5rem 1rem;
+ border: none;
+ border-radius: 12px;
+ font-size: 0.95rem;
+ cursor: pointer;
+}
+
+
+.like-btn {
+ background-color: #ff4d4d;
+ color: white;
+}
+
+
+.adopt-btn {
+ background-color: #4caf50;
+ color: white;
+}
+
+
+footer {
+ padding: 1rem;
+ background-color: #f2f2f2;
+ text-align: center;
+}
+
+
+footer h2 {
+ margin-bottom: 0.5rem;
+}
+
+
+.liked-pets {
+ list-style: none;
+ padding: 0;
+ margin: 0 auto;
+ max-width: 600px;
+ text-align: left;
+}
+
+
+.liked-pets li {
+ padding: 5px 0;
+ font-size: 1rem;
+}
+
+
+/* Add Dog Form */
+.add-dog-section {
+ background-color: #fff8f8;
+ padding: 2rem;
+ text-align: center;
+}
+
+
+#add-dog-form {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 1rem;
+ margin-top: 1rem;
+}
+
+
+#add-dog-form input,
+#add-dog-form button {
+ padding: 0.5rem;
+ font-size: 1rem;
+ border-radius: 8px;
+ border: 1px solid #ccc;
+}
+
+
+#add-dog-form input {
+ width: 200px;
+}
+
+
+#add-dog-form button {
+ background-color: #4caf50;
+ color: white;
+ cursor: pointer;
+}
+
+
+/* Modal styles */
+.modal {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(0, 0, 0, 0.6);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 100;
+}
+
+
+.modal-content {
+ background: #fff;
+ padding: 2rem;
+ border-radius: 10px;
+ text-align: center;
+ max-width: 400px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.modal-content button {
+ margin-top: 1rem;
+ padding: 0.5rem 1rem;
+ font-size: 1rem;
+ border-radius: 8px;
+ border: none;
+ cursor: pointer;
+}
+
+
+#confirm-yes {
+ background-color: #4caf50;
+ color: white;
+}
+
+
+#confirm-no {
+ background-color: #aaa;
+ color: white;
+}
+
+
+.hidden {
+ display: none;
+}
