@@ -7,3 +7,6 @@ const confirmModal = document.getElementById("confirm-modal");
 const confirmText = document.getElementById("confirm-text");
 const confirmYes = document.getElementById("confirm-yes");
 const confirmNo = document.getElementById("confirm-no");
+
+let dogList = [];
+let dogToAdopt = null;
