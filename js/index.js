@@ -10,3 +10,11 @@ const confirmNo = document.getElementById("confirm-no");
 
 let dogList = [];
 let dogToAdopt = null;
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedDogs = localStorage.getItem("dogList");
+  if (savedDogs) {
+    dogList = JSON.parse(savedDogs);
+    renderDogs(dogList);
+  }
+});
