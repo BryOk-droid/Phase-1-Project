@@ -22,11 +22,8 @@ A lightweight, interactive dog adoption website built with HTML, CSS, and JavaSc
 | Dog CEO API  | Public API for random dog images     |
 | LocalStorage | Persisting user data on the browser  |
 
----
 
-## Getting Started
-
-### Clone this repo
+## Clone this repo
 
 git clone https://github.com/BryOk-droid/Phase-1-Project
 
