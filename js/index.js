@@ -102,3 +102,20 @@ confirmNo.addEventListener("click", () => {
   confirmModal.classList.add("hidden");
   dogToAdopt = null;
 });
+
+addDogForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newDog = {
+    id: Date.now(),
+    name: document.getElementById("dog-name").value,
+    age: document.getElementById("dog-age").value,
+    image: document.getElementById("dog-image").value,
+    liked: false,
+  };
+
+  dogList.unshift(newDog);
+  updateLocalStorage();
+  renderDogs(dogList);
+  addDogForm.reset();
+});
