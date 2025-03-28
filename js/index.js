@@ -37,3 +37,30 @@ function fetchDogs() {
       renderDogs(dogList);
     });
 }
+
+function renderDogs(dogs) {
+  petList.innerHTML = "";
+  dogs.forEach((dog) => {
+    const card = document.createElement("div");
+    card.className = "pet-card";
+
+    card.innerHTML = `
+     <img src="${dog.image}" alt="${dog.name}" class="pet-img">
+     <h3>${dog.name}</h3>
+     <p><strong>Age:</strong> ${dog.age}</p>
+     <button class="like-btn">${dog.liked ? "♥ Liked" : "♡ Like"}</button>
+     <button class="adopt-btn">Adopt</button>
+   `;
+
+    card
+      .querySelector(".like-btn")
+      .addEventListener("click", () => toggleLike(dog.id));
+    card
+      .querySelector(".adopt-btn")
+      .addEventListener("click", () => confirmAdopt(dog.id));
+
+    petList.appendChild(card);
+  });
+
+  renderLikedDogs();
+}
