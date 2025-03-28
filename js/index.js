@@ -119,3 +119,8 @@ addDogForm.addEventListener("submit", (e) => {
   renderDogs(dogList);
   addDogForm.reset();
 });
+
+function updateLocalStorage() {
+  localStorage.setItem("dogList", JSON.stringify(dogList));
+}
+
