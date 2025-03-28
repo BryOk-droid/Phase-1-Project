@@ -124,3 +124,16 @@ function updateLocalStorage() {
   localStorage.setItem("dogList", JSON.stringify(dogList));
 }
 
+function getRandomName() {
+  const names = [
+    "Buddy",
+    "Luna",
+    "Charlie",
+    "Daisy",
+    "Max",
+    "Bailey",
+    "Rocky",
+    "Bella",
+  ];
+  return names[Math.floor(Math.random() * names.length)];
+}
