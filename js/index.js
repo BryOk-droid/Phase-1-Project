@@ -82,3 +82,11 @@ function toggleLike(id) {
   updateLocalStorage();
   renderDogs(dogList);
 }
+
+function confirmAdopt(id) {
+  const dog = dogList.find((d) => d.id === id);
+  dogToAdopt = id;
+  confirmText.textContent = `Are you sure you want to adopt ${dog.name}?`;
+  confirmModal.classList.remove("hidden");
+}
+
