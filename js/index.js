@@ -64,3 +64,14 @@ function renderDogs(dogs) {
 
   renderLikedDogs();
 }
+
+function renderLikedDogs() {
+  likedList.innerHTML = "";
+  dogList
+    .filter((d) => d.liked)
+    .forEach((dog) => {
+      const li = document.createElement("li");
+      li.textContent = `${dog.name} (${dog.age})`;
+      likedList.appendChild(li);
+    });
+}
