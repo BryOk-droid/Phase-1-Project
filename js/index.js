@@ -75,3 +75,10 @@ function renderLikedDogs() {
       likedList.appendChild(li);
     });
 }
+
+function toggleLike(id) {
+  const dog = dogList.find((d) => d.id === id);
+  dog.liked = !dog.liked;
+  updateLocalStorage();
+  renderDogs(dogList);
+}
