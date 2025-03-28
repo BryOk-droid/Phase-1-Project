@@ -18,3 +18,22 @@ window.addEventListener("DOMContentLoaded", () => {
     renderDogs(dogList);
   }
 });
+
+loadDogsBtn.addEventListener("click", fetchDogs);
+
+function fetchDogs() {
+  fetch("https://dog.ceo/api/breeds/image/random/10")
+    .then((res) => res.json())
+    .then((data) => {
+      const newDogs = data.message.map((url, index) => ({
+        id: Date.now() + index,
+        name: getRandomName(),
+        age: getRandomAge(),
+        image: url,
+        liked: false,
+      }));
+      dogList = [...newDogs, ...dogList];
+      updateLocalStorage();
+      renderDogs(dogList);
+    });
+}
