@@ -97,3 +97,8 @@ confirmYes.addEventListener("click", () => {
   updateLocalStorage();
   renderDogs(dogList);
 });
+
+confirmNo.addEventListener("click", () => {
+  confirmModal.classList.add("hidden");
+  dogToAdopt = null;
+});
