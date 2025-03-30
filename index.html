@@ -1,55 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-   <meta charset="UTF-8" />
-   <title>Adopt-a-Dog Finder</title>
-   <link rel="stylesheet" href="./css/styles.css" />
- </head>
- <body>
-   <header>
-     <h1>Adopt-a-Dog Finder</h1>
-     <button id="load-dogs">Dogs to be Adopted</button>
-   </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adopt-a-Dog Finder</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Adopt-a-Dog Finder</h1>
+      <button id="load-dogs">Load More Dogs</button>
+    </header>
 
+    <main>
+      <section id="pet-list" class="pet-list"></section>
+    </main>
 
-   <main>
-     <section id="pet-list" class="pet-list"></section>
-   </main>
+    <!-- Add Dog Form -->
+    <section class="add-dog-section">
+      <h2>📋 Add Your Dog for Adoption</h2>
+      <form id="add-dog-form">
+        <input type="text" id="dog-name" placeholder="Dog name" required />
+        <input
+          type="text"
+          id="dog-age"
+          placeholder="Age (e.g., 2 years)"
+          required
+        />
+        <input type="url" id="dog-image" placeholder="Image URL" required />
+        <button type="submit">Add Dog</button>
+      </form>
+    </section>
 
+    <!-- 💖 Liked Dogs Section -->
+    <section class="liked-dogs-section">
+      <h2>
+        ❤️ Liked Dogs <span id="like-count" class="like-count-badge">0</span>
+      </h2>
+      <ul id="liked-pets" class="liked-pets"></ul>
+    </section>
 
-   <!--Add Dog Form -->
-   <section class="add-dog-section">
-     <h2>📋 Add Your Dog for Adoption</h2>
-     <form id="add-dog-form">
-       <input type="text" id="dog-name" placeholder="Dog name" required />
-       <input
-         type="text"
-         id="dog-age"
-         placeholder="Age (e.g., 2 years)"
-         required
-       />
-       <input type="url" id="dog-image" placeholder="Image URL" required />
-       <button type="submit">Add Dog</button>
-     </form>
-   </section>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="social-media">
+          <a
+            href="https://www.linkedin.com/in/brianokoth/"
+            target="_blank"
+            class="social-icon"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a
+            href="mailto:brianokoth534@gmail.com"
+            class="social-icon"
+            aria-label="Email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/okoth.bryan/"
+            target="_blank"
+            class="social-icon"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://x.com/BrianOmugah"
+            target="_blank"
+            class="social-icon"
+            aria-label="X / Twitter"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
 
+        <p class="copyright">© 2025 Adopt-a-Dog Finder. All rights reserved.</p>
+      </div>
+    </footer>
 
-   <footer>
-     <h2>❤️ Liked Dogs</h2>
-     <ul id="liked-pets" class="liked-pets"></ul>
-   </footer>
+    <!-- Confirm Adopt Modal -->
+    <div id="confirm-modal" class="modal hidden">
+      <div class="modal-content">
+        <p id="confirm-text"></p>
+        <div class="modal-buttons">
+          <button id="confirm-no">No</button>
+          <button id="confirm-yes">Yes</button>
+        </div>
+      </div>
+    </div>
 
-
-   <!-- Confirm Adopt Modal -->
-   <div id="confirm-modal" class="modal hidden">
-     <div class="modal-content">
-       <p id="confirm-text"></p>
-       <button id="confirm-yes">Yes</button>
-       <button id="confirm-no">No</button>
-     </div>
-   </div>
-
-
-   <script src="./js/index.js"></script>
- </body>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
