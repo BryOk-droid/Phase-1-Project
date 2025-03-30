@@ -1,209 +1,235 @@
 body {
- font-family: sans-serif;
- background-color: #fefefe;
- margin: 0;
- padding: 0;
- color: #333;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to bottom right, #f8fff9, #e9f9f1);
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
-
 
 header {
- background-color: #f8dada;
- text-align: center;
- padding: 1.5rem;
+  background-color: #d4f4e2;
+  text-align: center;
+  padding: 1.5rem;
+  border-bottom: 2px solid #b2e9cc;
 }
-
 
 header h1 {
- margin-bottom: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
-
 
 #load-dogs {
- padding: 0.7rem 1.5rem;
- font-size: 1rem;
- background-color: #e28585;
- border: none;
- border-radius: 15px;
- color: white;
- cursor: pointer;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
 
 #load-dogs:hover {
- background-color: #d46a6a;
+  background-color: #e35454;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
 }
-
 
 .pet-list {
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
- padding: 2rem;
- gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1.5rem;
 }
-
 
 .pet-card {
- border: 1px solid #ccc;
- border-radius: 12px;
- padding: 1rem;
- width: 250px;
- background-color: #fff5f5;
- box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
- text-align: center;
- transition: transform 0.2s;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 1rem;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
-
 
 .pet-card:hover {
- transform: scale(1.02);
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 }
-
 
 .pet-card img {
- width: 100%;
- height: 180px;
- object-fit: cover;
- border-radius: 10px;
- cursor: pointer;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
 }
-
 
 .pet-card button {
- margin: 0.5rem 0.3rem;
- padding: 0.5rem 1rem;
- border: none;
- border-radius: 12px;
- font-size: 0.95rem;
- cursor: pointer;
+  margin: 0.5rem 0.3rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
 }
-
 
 .like-btn {
- background-color: #e74343;
- color: white;
+  background-color: #ff6b6b;
+  color: white;
 }
-
 
 .adopt-btn {
- background-color: #4caf50;
- color: white;
+  background-color: #4caf50;
+  color: white;
 }
 
-
-footer {
- padding: 1rem;
- background-color: #f2f2f2;
- text-align: center;
-}
-
-
-footer h2 {
- margin-bottom: 0.5rem;
-}
-
-
-.liked-pets {
- list-style: none;
- padding: 0;
- margin: 0 auto;
- max-width: 600px;
- text-align: left;
-}
-
-
-.liked-pets li {
- padding: 5px 0;
- font-size: 1rem;
-}
-
-
-/* Add Dog Form */
 .add-dog-section {
- background-color: #fff8f8;
- padding: 2rem;
- text-align: center;
+  background-color: #f9fdfb;
+  padding: 2rem;
+  text-align: center;
 }
-
 
 #add-dog-form {
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
- gap: 1rem;
- margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
-
 
 #add-dog-form input,
 #add-dog-form button {
- padding: 0.5rem;
- font-size: 1rem;
- border-radius: 8px;
- border: 1px solid #ccc;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
-
 
 #add-dog-form input {
- width: 200px;
+  width: 200px;
 }
-
 
 #add-dog-form button {
- background-color: #4caf50;
- color: white;
- cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
 }
 
+.liked-dogs-section {
+  background-color: #e9fcf2;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border-top: 3px dashed #90e0a9;
+}
 
-/* Modal styles */
+.liked-dogs-section h2 {
+  color: #ff6b6b;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.like-count-badge {
+  background-color: #ff6b6b;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.liked-pets {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 500px;
+}
+
+.liked-pets li {
+  background-color: #ffe8e3;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+footer .social-icon {
+  margin: 0 0.6rem;
+  color: #444;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+footer .social-icon:hover {
+  color: #ff6b6b;
+  text-shadow: 0 0 10px #ff6b6b;
+}
+
+footer .contact-info {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+footer .contact-info i {
+  margin-right: 8px;
+  color: #777;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
 .modal {
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background: rgba(0, 0, 0, 0.6);
- display: flex;
- justify-content: center;
- align-items: center;
- z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 }
-
 
 .modal-content {
- background: #fff;
- padding: 2rem;
- border-radius: 10px;
- text-align: center;
- max-width: 400px;
- box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
 
 .modal-content button {
- margin-top: 1rem;
- padding: 0.5rem 1rem;
- font-size: 1rem;
- border-radius: 8px;
- border: none;
- cursor: pointer;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
-
 
 #confirm-yes {
- background-color: #4caf50;
- color: white;
+  background-color: #4caf50;
+  color: white;
 }
-
 
 #confirm-no {
- background-color: #aaa;
- color: white;
+  background-color: #aaa;
+  color: white;
 }
 
-
 .hidden {
- display: none;
+  display: none;
 }
