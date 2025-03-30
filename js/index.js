@@ -1,5 +1,6 @@
 const petList = document.getElementById("pet-list");
 const likedList = document.getElementById("liked-pets");
+const likeCount = document.getElementById("like-count");
 const loadDogsBtn = document.getElementById("load-dogs");
 const addDogForm = document.getElementById("add-dog-form");
 
@@ -11,6 +12,7 @@ const confirmNo = document.getElementById("confirm-no");
 let dogList = [];
 let dogToAdopt = null;
 
+// Load dogs from localStorage on page load
 window.addEventListener("DOMContentLoaded", () => {
   const savedDogs = localStorage.getItem("dogList");
   if (savedDogs) {
@@ -19,6 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Load more dogs from public API
 loadDogsBtn.addEventListener("click", fetchDogs);
 
 function fetchDogs() {
@@ -45,12 +48,12 @@ function renderDogs(dogs) {
     card.className = "pet-card";
 
     card.innerHTML = `
-     <img src="${dog.image}" alt="${dog.name}" class="pet-img">
-     <h3>${dog.name}</h3>
-     <p><strong>Age:</strong> ${dog.age}</p>
-     <button class="like-btn">${dog.liked ? "♥ Liked" : "♡ Like"}</button>
-     <button class="adopt-btn">Adopt</button>
-   `;
+      <img src="${dog.image}" alt="${dog.name}" class="pet-img">
+      <h3>${dog.name}</h3>
+      <p><strong>Age:</strong> ${dog.age}</p>
+      <button class="like-btn">${dog.liked ? "♥ Liked" : "♡ Like"}</button>
+      <button class="adopt-btn">Adopt</button>
+    `;
 
     card
       .querySelector(".like-btn")
@@ -67,13 +70,14 @@ function renderDogs(dogs) {
 
 function renderLikedDogs() {
   likedList.innerHTML = "";
-  dogList
-    .filter((d) => d.liked)
-    .forEach((dog) => {
-      const li = document.createElement("li");
-      li.textContent = `${dog.name} (${dog.age})`;
-      likedList.appendChild(li);
-    });
+  const likedDogs = dogList.filter((d) => d.liked);
+  likeCount.textContent = likedDogs.length;
+
+  likedDogs.forEach((dog) => {
+    const li = document.createElement("li");
+    li.textContent = `${dog.name} (${dog.age})`;
+    likedList.appendChild(li);
+  });
 }
 
 function toggleLike(id) {
@@ -103,6 +107,7 @@ confirmNo.addEventListener("click", () => {
   dogToAdopt = null;
 });
 
+// Add new dog manually
 addDogForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -120,32 +125,43 @@ addDogForm.addEventListener("submit", (e) => {
   addDogForm.reset();
 });
 
+// Save to localStorage
 function updateLocalStorage() {
   localStorage.setItem("dogList", JSON.stringify(dogList));
 }
 
+// Random Name + Age Generator
 function getRandomName() {
-  const names = [
-    "Buddy",
-    "Luna",
-    "Charlie",
-    "Daisy",
-    "Max",
-    "Bailey",
-    "Rocky",
-    "Bella",
+  const adjectives = [
+    "Happy",
+    "Fluffy",
+    "Brave",
+    "Tiny",
+    "Sunny",
+    "Snappy",
+    "Cuddly",
+    "Bouncy",
   ];
-  return names[Math.floor(Math.random() * names.length)];
+  const nouns = [
+    "Biscuit",
+    "Pumpkin",
+    "Mango",
+    "Noodle",
+    "Pebble",
+    "Waffle",
+    "Ziggy",
+  ];
+  const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+  const noun = nouns[Math.floor(Math.random() * nouns.length)];
+  return `${adj} ${noun}`;
 }
 
 function getRandomAge() {
-  const ages = [
-    "6 months",
-    "1 year",
-    "2 years",
-    "3 years",
-    "4 months",
-    "5 years",
-  ];
-  return ages[Math.floor(Math.random() * ages.length)];
+  if (Math.random() < 0.3) {
+    const months = Math.floor(Math.random() * 10) + 1;
+    return `${months} month${months > 1 ? "s" : ""}`;
+  } else {
+    const years = Math.floor(Math.random() * 15) + 1;
+    return `${years} year${years > 1 ? "s" : ""}`;
+  }
 }
